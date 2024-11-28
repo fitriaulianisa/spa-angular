@@ -25,11 +25,11 @@
   </div> -->
 
  
-  <div class="container mt-5">
+  <!-- <div class="container mt-5">
     
     <h2>Data Mahasiswa</h2>
     <div class="row">
-      <!-- Card Mahasiswa 1 -->
+      Card Mahasiswa 1
      
       <div class="col-md-6 mb-4">
         <div class="card">
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <!-- Card Mahasiswa 2 -->
+      Card Mahasiswa 2
       <div class="col-md-6 mb-4">
         <div class="card">
           <img src="https://via.placeholder.com/150" class="card-img-top" alt="Foto Mahasiswa 2">
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <!-- Card Mahasiswa 3 -->
+  Card Mahasiswa 3
   <div class="col-md-6 mb-4">
     <div class="card">
       <img src="https://via.placeholder.com/150" class="card-img-top" alt="Foto Mahasiswa 3">
@@ -70,7 +70,7 @@
       </div>
     </div>
   </div>
-  <!-- Card Mahasiswa 4 -->
+  Card Mahasiswa 4
   <div class="col-md-6 mb-4">
     <div class="card">
       <img src="https://via.placeholder.com/150" class="card-img-top" alt="Foto Mahasiswa 4">
@@ -83,4 +83,29 @@
     </div>
   </div>
 </div>
+</div> -->
+<div class="container mt-4">
+  <h2 class="mb-4">Daftar Mahasiswa</h2>
+  
+  <!-- Loader -->
+  <div class="d-flex justify-content-center mt-4" *ngIf="isLoading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Card Layout -->
+  <div class="row" *ngIf="!isLoading">
+    <div class="col-md-4 mb-4" *ngFor="let item of mahasiswa">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.nama }}</h5>
+          <p class="card-text">
+            <strong>Singkatan:</strong> {{ item.singkatan }} <br />
+          <strong>Fakultas:</strong> {{ item.fakultas || 'Data fakultas tidak tersedia' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

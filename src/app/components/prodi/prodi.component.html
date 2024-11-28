@@ -1,4 +1,4 @@
-<div class="container my-5">
+<!-- <div class="container my-5">
     <h2>Data Prodi</h2>
     <table class="table table-bordered table-striped">
       <thead>
@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Data Fakultas akan di-loop di sini -->
+        Data Fakultas akan di-loop di sini
         <tr>
           <td>1</td>
           <td>Sistem Informasi</td>
@@ -28,4 +28,31 @@
           </tr>
       </tbody>
     </table>
+  </div> -->
+
+  <div class="container mt-4">
+    <h2 class="mb-4">Daftar Program Studi</h2>
+    
+    <!-- Loader -->
+    <div class="d-flex justify-content-center mt-4" *ngIf="isLoading">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  
+    <!-- Card Layout -->
+    <div class="row" *ngIf="!isLoading">
+      <div class="col-md-4 mb-4" *ngFor="let item of prodi">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.nama }}</h5>
+            <p class="card-text">
+              <strong>Singkatan:</strong> {{ item.singkatan }} <br />
+            <strong>Fakultas:</strong> {{ item.fakultas || 'Data fakultas tidak tersedia' }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
