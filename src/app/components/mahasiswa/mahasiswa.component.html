@@ -101,8 +101,10 @@
         <div class="card-body">
           <h5 class="card-title">{{ item.nama }}</h5>
           <p class="card-text">
-            <strong>Singkatan:</strong> {{ item.singkatan }} <br />
-          <strong>Fakultas:</strong> {{ item.fakultas || 'Data fakultas tidak tersedia' }}
+            <strong>Npm:</strong> {{ item.npm }} <br />
+            <strong>Jenis Kelamin:</strong> {{ item.jenis_kelamin }} <br />
+            <strong>Asal Sekolah:</strong> {{ item.asal_sekolah }} <br />
+          <strong>Fakultas:</strong> {{ item.prodi_id.nama || 'Data fakultas tidak tersedia' }}
           </p>
         </div>
       </div>
