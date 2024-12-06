@@ -100,11 +100,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of fakultas">
+        
+          <tr
+          *ngFor="let item of fakultas | paginate: { itemsPerPage: 5, currentPage: currentPage }; index as i">
           <td>{{ item.nama }}</td>
           <td>{{ item.singkatan }}</td>
         </tr>
       </tbody>
     </table>
-  </div>
-
+  
+<!-- Kontrol Pagination -->
+  <!-- pagination-controls adalah komponen bawaan dari ngx-pagination -->
+  <!-- Ketika halaman berubah, properti currentPage diperbarui -->
+  <pagination-controls (pageChange)="currentPage = $event">
+  </pagination-controls>
+</div>
