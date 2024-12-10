@@ -99,24 +99,25 @@
     type="button"
     class="btn btn-primary mb-3"
     data-bs-toggle="modal"
-    data-bs-target="#tambahMahasiswaModal"
+    data-bs-target="#mahasiswaModal"
+    (click)="resetForm()"
   >
     Tambah Mahasiswa
   </button>
 
-  <!-- Modal Tambah Mahasiswa -->
+  <!-- Modal Mahasiswa -->
   <div
     class="modal fade"
-    id="tambahMahasiswaModal"
+    id="mahasiswaModal"
     tabindex="-1"
-    aria-labelledby="tambahMahasiswaModalLabel"
+    aria-labelledby="mahasiswaModalLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="tambahMahasiswaModalLabel">
-            Tambah Mahasiswa
+          <h5 class="modal-title" id="mahasiswaModalLabel">
+            {{ isEditing ? 'Edit Mahasiswa' : 'Tambah Mahasiswa' }}
           </h5>
           <button
             type="button"
@@ -187,7 +188,7 @@
               class="btn btn-primary"
               [disabled]="isSubmitting"
             >
-              {{ isSubmitting ? "Menyimpan..." : "Tambah Mahasiswa" }}
+              {{ isSubmitting ? "Menyimpan..." : (isEditing ? "Simpan Perubahan" : "Tambah Mahasiswa") }}
             </button>
           </form>
         </div>
@@ -206,6 +207,7 @@
           <th>Jenis Kelamin</th>
           <th>Asal Sekolah</th>
           <th>Program Studi</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -218,8 +220,25 @@
           </td>
           <td>{{ item.asal_sekolah }}</td>
           <td>{{ item.prodi_id?.nama }}</td>
+          <td>
+            <button
+              class="btn btn-warning btn-sm me-2"
+              (click)="editMahasiswa(item)"
+              data-bs-toggle="modal"
+              data-bs-target="#mahasiswaModal"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="deleteMahasiswa(item._id)"
+            >
+              Hapus
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+
