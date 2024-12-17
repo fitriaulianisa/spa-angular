@@ -161,7 +161,10 @@ editProdiId: string | null = null; // ID prodi yang sedang diubah
   updateProdi(): void {
     if (this.prodiForm.valid) {
       this.isSubmitting = true;
-      this.http.put(`${this.apiProdiUrl}/${this.editProdiId}`, this.prodiForm.value).subscribe({
+      const token = localStorage.getItem('authToken');
+      const headers = { Authorization: `Bearer ${token}`};
+
+      this.http.put(this.apiProdiUrl, this.prodiForm.value, {headers}).subscribe({
         next: (response) => {
           console.log('Prodi berhasil diperbarui:', response);
           this.getProdi(); // Refresh data prodi
@@ -182,4 +185,3 @@ editProdiId: string | null = null; // ID prodi yang sedang diubah
     }
   }
 }
-
