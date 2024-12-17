@@ -162,7 +162,7 @@ editProdiId: string | null = null; // ID prodi yang sedang diubah
     if (this.prodiForm.valid) {
       this.isSubmitting = true;
       const token = localStorage.getItem('authToken');
-      const headers = { Authorization: `Bearer${token}`};
+      const headers = { Authorization: `Bearer ${token}`};
       this.http.put(`${this.apiProdiUrl}/${this.editProdiId}`, this.prodiForm.value, {headers}).subscribe({
         next: (response) => {
           console.log('Prodi berhasil diperbarui:', response);
