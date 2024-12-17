@@ -107,7 +107,7 @@ export class ProdiComponent implements OnInit { // Mendeklarasikan class kompone
         },
         error: (err) => { // Callback jika request gagal.
           console.error('Error menambahkan prodi:', err); // Log error ke konsol.
-          this.isSubmitting = false; // Menonaktifkan indikator pengiriman.
+          this.isSubmitting = true; // Menonaktifkan indikator pengiriman.
         },
       });
     }
