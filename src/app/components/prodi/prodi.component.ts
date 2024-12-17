@@ -80,7 +80,7 @@ export class ProdiComponent implements OnInit { // Mendeklarasikan class kompone
       this.isSubmitting = true; // Mengaktifkan indikator pengiriman data.
       const token = localStorage.getItem('authToken'); //ambil token dari localstorage
       const headers = { Authorization: `Bearer ${token}`};
-      this.http.post(`${this.apiProdiUrl}`, { headers}).subscribe({ // Melakukan HTTP POST ke API prodi.
+      this.http.post(this.apiProdiUrl, this.prodiForm.value, { headers}).subscribe({ // Melakukan HTTP POST ke API prodi.
         next: (response) => { // Callback jika request berhasil.
           console.log('Prodi berhasil ditambahkan:', response); // Log respons ke konsol.
           this.getProdi(); // Refresh data prodi setelah penambahan.
