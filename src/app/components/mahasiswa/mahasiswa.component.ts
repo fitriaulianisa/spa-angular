@@ -129,7 +129,6 @@ export class MahasiswaComponent implements OnInit { // Mendeklarasikan class kom
           prodi_id: data.prodi_id || null,
           jenis_kelamin: data.jenis_kelamin || 'L',
           asal_sekolah: data.asal_sekolah || '',
-          foto: '',
         });
         this.isEditModalVisible = true;
       },
