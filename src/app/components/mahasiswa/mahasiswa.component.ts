@@ -25,8 +25,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms'; //
 export class MahasiswaComponent implements OnInit { // Mendeklarasikan class komponen dengan implementasi OnInit untuk inisialisasi.
   mahasiswa: any[] = []; // Menyimpan data mahasiswa.
   prodi: any[] = []; // Menyimpan data program studi untuk dropdown.
-  apiMahasiswaUrl = 'https://belajar-express-one.vercel.app/api/mahasiswa'; // URL API untuk mengambil dan menambahkan data mahasiswa.
-  apiProdiUrl = 'https://belajar-express-one.vercel.app/api/prodi'; // URL API untuk mengambil data prodi.
+  apiMahasiswaUrl = 'https://crud-express-seven.vercel.app/api/mahasiswa'; // URL API untuk mengambil dan menambahkan data mahasiswa.
+  apiProdiUrl = 'https://crud-express-seven.vercel.app/api/prodi'; // URL API untuk mengambil data prodi.
   isLoading = true; // Indikator loading data dari API.
   mahasiswaForm: FormGroup; // Form group untuk formulir reaktif mahasiswa.
   isSubmitting = false; // Indikator proses pengiriman data.

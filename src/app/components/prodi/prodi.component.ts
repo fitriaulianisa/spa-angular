@@ -26,8 +26,8 @@ import * as bootstrap from 'bootstrap'; // Mengimpor Bootstrap untuk manipulasi 
 export class ProdiComponent implements OnInit { // Mendeklarasikan class komponen dengan implementasi OnInit untuk inisialisasi.
   prodi: any[] = []; // Menyimpan data program studi.
   fakultas: any[] = []; // Menyimpan data fakultas untuk dropdown.
-  apiProdiUrl = 'https://belajar-express-one.vercel.app/api/prodi'; // URL API untuk mengambil dan menambahkan data prodi.
-  apiFakultasUrl = 'https://belajar-express-one.vercel.app/api/fakultas'; // URL API untuk mengambil data fakultas.
+  apiProdiUrl = 'https://crud-express-seven.vercel.app/api/prodi'; // URL API untuk mengambil dan menambahkan data prodi.
+  apiFakultasUrl = 'https://crud-express-seven.vercel.app/api/fakultas'; // URL API untuk mengambil data fakultas.
   isLoading = true; // Indikator loading data dari API.
   prodiForm: FormGroup; // Form group untuk formulir reaktif prodi.
   isSubmitting = false; // Indikator proses pengiriman data.

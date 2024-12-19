@@ -28,7 +28,7 @@ export class FakultasComponent implements OnInit {
   fakultas: any[] = [];
   currentPage = 1;
   itemsPerPage = 5;
-  apiUrl = 'https://belajar-express-one.vercel.app/api/fakultas';
+  apiUrl = 'https://crud-express-seven.vercel.app/api/fakultas';
   isLoading = true;
 
   fakultasForm: FormGroup;

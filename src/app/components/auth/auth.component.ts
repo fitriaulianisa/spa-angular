@@ -23,7 +23,7 @@ export class AuthComponent {
   // Variabel untuk menandakan apakah sedang mengirimkan data (untuk menampilkan status loading)
   isSubmitting: boolean = false;  
   // URL endpoint untuk API login
-  apiUrl = 'https://belajar-express-one.vercel.app/api/auth/login';  // API login endpoint
+  apiUrl = 'https://crud-express-seven.vercel.app/api/auth/login';  // API login endpoint
 
   // Konstruktor untuk injeksi dependensi
   constructor(
