@@ -28,7 +28,7 @@ export class FakultasComponent implements OnInit {
   fakultas: any[] = [];
   currentPage = 1;
   itemsPerPage = 5;
-  apiUrl = 'https://crud-express-seven.vercel.app/api/fakultas';
+  apiUrl = 'https://belajar-express-one.vercel.app/api/fakultas';
   isLoading = true;
 
   fakultasForm: FormGroup;
@@ -94,7 +94,9 @@ export class FakultasComponent implements OnInit {
     if (this.selectedFakultasId && this.fakultasForm.valid) {
       this.isSubmitting = true;
       const url = `${this.apiUrl}/${this.selectedFakultasId}`;
-      this.http.put(url, this.fakultasForm.value).subscribe({
+      const token = localStorage.getItem('authToken');
+      const headers = {Authorization: `Bearer ${token}`};
+      this.http.put(url, this.fakultasForm.value, {headers}).subscribe({
         next: () => {
           this.getFakultas();
           this.fakultasForm.reset();
@@ -112,8 +114,11 @@ export class FakultasComponent implements OnInit {
 
   deleteFakultas(id: string): void {
     if (confirm('Apakah Anda yakin ingin menghapus fakultas ini?')) {
+      
       const url = `${this.apiUrl}/${id}`;
-      this.http.delete(url).subscribe({
+      const token = localStorage.getItem('authToken');
+      const headers = { Authorization: `Bearer ${token}`};
+      this.http.delete(url, {headers}).subscribe({
         next: () => {
           console.log('Fakultas berhasil dihapus.');
           this.getFakultas();
